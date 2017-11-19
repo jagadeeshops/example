@@ -5,14 +5,25 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-unless os.windows?
-  # This is an example test, replace with your own test.
-  describe user('root'), :skip do
-    it { should exist }
+if os[:family] == 'debian'
+  describe package('apache2') do
+    it { should be_installed }
   end
+elsif os[:family] == 'redhat'
+  describe package('httpd') do
+    it { should be_installed }
+  end
+else
+  describe package('apache2') do
+    it { should be_installed }
+  end 
 end
 
-# This is an example test, replace it with your own test.
-describe port(80), :skip do
+describe port(80) do
   it { should_not be_listening }
 end
+
+
+describe package('jq') do
+  it { should be_installed }
+end 
