@@ -1,3 +1,5 @@
+OS: windows 7
+
 $chef --version
 Chef Development Kit Version: 2.4.13
 chef-client version: 13.6.4
