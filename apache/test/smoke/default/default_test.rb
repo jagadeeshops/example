@@ -20,10 +20,10 @@ else
 end
 
 describe port(80) do
-  it { should_not be_listening }
+  it { should be_listening }
 end
 
 
-describe package('jq') do
-  it { should be_installed }
-end 
+describe http('http://localhost:80') do
+  its('status') { should eq 200 }
+end
