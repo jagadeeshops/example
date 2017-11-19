@@ -13,7 +13,7 @@ verifier:
   name: inspec
 
 platforms:
-  - name: opscode-ubuntu-14.04
+  - name: ubuntu/trusty64
   - name: centos/7
 suites:
   - name: default
