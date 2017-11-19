@@ -24,6 +24,6 @@ describe port(80) do
 end
 
 
-describe http('http://localhost:80') do
+describe http('http://localhost:80', enable_remote_worker: true) do
   its('status') { should eq 200 }
 end
