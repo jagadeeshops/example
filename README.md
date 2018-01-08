@@ -1,4 +1,4 @@
-# Dev environments version
+# Test kitchen example with apache cookbook
 
 OS: windows 7
 ```
@@ -17,8 +17,12 @@ $VBoxManage --version
 $vagrant --version
 Vagrant 1.9.7
 ```
-
+# commands
 ```
+$ kitchen converge
+$ kitcken test
+$ kitchen verify
+
 ```
 
 
